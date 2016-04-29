@@ -1,0 +1,52 @@
+<div class="4u" id="sidebar">
+							<hr class="first" />
+
+                            {{ widgets('aside_top') }}
+
+							<section>
+								<header>
+									<h3><a href="#">Accumsan sed penatibus</a></h3>
+								</header>
+								<p>
+									Dolor sed fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
+									porttitor phasellus tempus cubilia ultrices tempor sagittis  tellus ante diam nec penatibus dolor cras
+									magna tempus feugiat veroeros.
+								</p>
+								<footer>
+									<a href="#" class="button">Learn More</a>
+								</footer>
+							</section>
+							<hr />
+							<section>
+								<header>
+									<h3><a href="#">Sed lorem etiam consequat</a></h3>
+								</header>
+								<p>
+									Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+								</p>
+								
+                                {% setcontent records = "entries/latest/5" %}
+                                {% for record in records %}
+								
+								<div class="row half no-collapse">
+									<div class="4u">
+										<a href="{{ record.link }}" class="image fit"><img src="{{ thumbnail(record.image, 96, 96) }}" alt="" /></a>
+									</div>
+									<div class="8u">
+										<a href="{{ record.link }}"><h4>{{ record.title }}</h4></a>
+										<p>
+											{{ record.excerpt(50) }}
+										</p>
+									</div>
+								</div>
+								
+								{% endfor %}
+								
+								<footer>
+									<a href="#" class="button">Magna Adipiscing</a>
+								</footer>
+							</section>
+
+                            {{ widgets('aside_bottom') }}
+
+						</div>

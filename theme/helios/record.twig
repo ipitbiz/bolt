@@ -1,0 +1,49 @@
+{% extends "base.twig" %}
+
+{% block body_class %}
+    class="left-sidebar"
+{% endblock %}
+
+{% block page_header %}
+		<!-- Header -->
+			<div id="header">
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1 class="logo"><a href="/" id="logo">ipit.biz</a></h1>
+							<strong>Desarrollo web. HTML | CSS | JS | PHP </strong>
+						</header>
+					</div>
+{% endblock %}
+
+{% block content %}
+	<!-- Main -->
+			<div class="wrapper style1">
+
+				<div class="container">
+					<div class="interior">
+						{# include '_aside-left.twig' #}
+						<div class="9u skel-cell-important" id="content">
+							<article id="main">
+								<header>
+									<h2><a href="#">{{ record.title }}</a></h2>
+									{% if record.teasesr %}
+									<p>
+										{{ record.teaser }}
+									</p>
+									{% endif %}
+								</header>
+								{% if record.image %}
+								<a href="#" class="image featured"><img src="{{ thumbnail(record.image, 770, 155) }}" alt="" /></a>
+								{% endif %}
+								<section>
+									{{ record.body }}
+								</section>
+							</article>
+						</div>
+					</div>
+					<hr />
+					{% include '_3block.twig' %}
+				</div>
+			</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.twig" %}
+
+{% block body_class %}
+    class="homepage"
+{% endblock %}
+
+{% block page_header %}
+		<!-- Header -->
+			<div id="header">
+						
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="index.html" id="logo">Helios</a></h1>
+							<hr />
+							<p>Another fine freebie by HTML5 UP</p>
+							<p><em>Adapted for Bolt.</em></p>
+						</header>
+						<footer>
+							<a href="#banner" class="button circled scrolly">Start</a>
+						</footer>
+					</div>
+{% endblock %}
+
+{% block content %}			
+		<!-- Banner -->
+			<section id="banner">
+				<header>
+					<h2>Hi. You're looking at <strong>Helios</strong>.</h2>
+					<p>
+						A (free) responsive site template by <a href="http://html5up.net">HTML5 UP</a>.
+						Built on <strong>skel</strong> and released under the <a href="http://html5up.net/license">CCA</a> license.
+					</p>
+				</header>
+			</section>
+
+        
+		{% include '_carousel.twig' %}
+		
+			
+		<!-- Main -->
+			<div class="wrapper style2">
+			
+			 {% setcontent records = "entries/latest/1" %}
+             {% for record in records %}
+
+				<article id="main" class="container special">
+					<a href="#" class="image featured"><img src="{{ thumbnail(record.image, 1200, 550) }}" alt="" /></a>
+					<header>
+						<h2><a href="#">{{ record.title }}</a></h2>
+						<p>
+							{{ record.teaser }}
+						</p>
+					</header>
+					<p>
+						{{ record.body }}
+					</p>
+					<footer>
+						<a href="{{ record.link }}" class="button">Continue Reading</a>
+					</footer>
+				</article>
+				
+			{% endfor %}	
+
+			</div>
+
+		<!-- Features -->
+			<div class="wrapper style1">
+				
+				<section id="features" class="container special">
+					<header>
+						<h2>Morbi ullamcorper et varius leo lacus</h2>
+						<p>Ipsum volutpat consectetur orci metus consequat imperdiet duis integer semper magna.</p>
+					</header>
+					
+					{% include '_3block.twig' %}
+					
+				</section>
+
+			</div>
+{% endblock %}

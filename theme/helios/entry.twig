@@ -1,0 +1,45 @@
+{% extends "base.twig" %}
+
+{% block body_class %}
+    class="right-sidebar"
+{% endblock %}
+
+{% block page_header %}
+		<!-- Header -->
+			<div id="header">
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="/" id="logo">Helios</a></h1>
+						</header>
+					</div>
+{% endblock %}
+
+{% block content %}
+		<!-- Main -->
+			<div class="wrapper style1">
+
+				<div class="container">
+					<div class="row double">
+						<div class="8u" id="content">
+							<article id="main">
+								<header>
+									<h2><a href="#">{{ record.title }}</a></h2>
+									<p>
+										{{ record.teaser }}
+									</p>
+								</header>
+								<a href="#" class="image featured"><img src="{{ thumbnail(record.image, 770, 155) }}" alt="" /></a>
+								<section>
+									{{ record.body }}
+								</section>
+							</article>
+						</div>
+						{% include '_aside-right.twig' %}
+					</div>
+					<hr />
+					{% include '_3block.twig' %}
+				</div>
+
+			</div>
+{% endblock %}
