@@ -1,0 +1,18 @@
+                    <div class="row">
+                    
+                        {% setcontent records = "entries/random/3" %}
+                        {% for record in records %}
+                    
+						<article class="4u special">
+							<a href="{{ record.link }}" class="image featured"><img src="{{ thumbnail(record.image, 370, 255) }}" alt="" /></a>
+							<header>
+								<h3><a href="{{ record.link }}">{{ record.title }}</a></h3>
+							</header>
+							<p>
+								{{ record.excerpt(74) }}
+							</p>
+						</article>
+						
+						{% endfor %}
+												
+					</div>
